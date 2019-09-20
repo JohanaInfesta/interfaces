@@ -114,11 +114,14 @@
   animation: rotating 43200s linear infinite;
 }
 /*Punto 4 */
-.personaje{
+#personaje{
   height: 400px;
   width: 225px;
   background-image:url(img/personaje.png);
   animation: correr 6s steps(22) infinite;
+  position: absolute;
+  left: 100px;
+  top: auto;
 }
 @keyframes correr {
   0%{background-position: 0px;}
