@@ -1,0 +1,126 @@
+/* primer punto */
+.punto1{
+  margin-left: 4%;
+}
+.transicion{
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border: black 2px solid;
+  background: grey;
+  -webkit-transition: background .35s ease-out;
+  -moz-transition: background .35s ease-out;
+  -o-transition: background .35s ease-out;
+  transition: background .35s ease-out;
+}
+.transicion:hover{
+  background: pink;
+  -webkit-transition: background .35s ease-in;
+  -moz-transition: background .35s ease-in;
+  -o-transition: background .35s ease-in;
+  transition: background .35s ease-in;
+}
+
+/*segundo punto*/
+.punto2{
+  margin-right: 37%;
+  text-align: center;
+}
+.transformacion{
+  width: 150px;
+  height: 150px;
+  margin-left: 25%;
+  border: black 2px solid;
+  background: lightyellow;
+  transition: all 0.35s ease-out 0s;
+}
+.transformacion:hover{
+  -moz-transition:rotate(45deg);
+  -webkit-transition:rotate(45deg);
+  -o-transition:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  transform: rotate(45deg);
+  transition: all 0.35s ease-in 0s;
+}
+
+/*punto tres*/
+.punto3{
+  text-align: center;
+}
+#reloj, .segundo, .minuto, .hora{
+  margin: 0 auto;
+  background-repeat: no-repeat;
+}
+.segundo, .minuto, .hora{
+  height: 372px;
+  width: 372px;
+}
+#reloj{
+  background-image: url(img/reloj.png);
+  height: 372px;
+  width: 376px;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.segundo{
+  background-image:url(img/segundero.png);
+  -webkit-animation: rotating 60s linear infinite;
+  -moz-animation: rotating 60s linear infinite;
+  -ms-animation: rotating 60s linear infinite;
+  -o-animation: rotating 60s linear infinite;
+  animation: rotating 60s linear infinite;
+}
+.minuto{
+  background-image:url(img/minutos.png);
+  -webkit-animation: rotating 3600s linear infinite;
+  -moz-animation: rotating 3600s linear infinite;
+  -ms-animation: rotating 3600s linear infinite;
+  -o-animation: rotating 3600s linear infinite;
+  animation: rotating 3600s linear infinite;
+}
+.hora{
+  background-image:url(img/horas.png);
+  -webkit-animation: rotating 43200s linear infinite;
+  -moz-animation: rotating 43200s linear infinite;
+  -ms-animation: rotating 43200s linear infinite;
+  -o-animation: rotating 43200s linear infinite;
+  animation: rotating 43200s linear infinite;
+}
+/*Punto 4 */
+.personaje{
+  height: 400px;
+  width: 225px;
+  background-image:url(img/personaje.png);
+  animation: correr 6s steps(22) infinite;
+}
+@keyframes correr {
+  0%{background-position: 0px;}
+  100%{background-position: -4950px;}
+}
