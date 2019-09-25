@@ -1,0 +1,114 @@
+.personaje{
+  height: 127px;
+  width: 108px;
+  background-image:url(img/personaje.png);
+  background-repeat: no-repeat;
+  bottom: 10px;
+  position: absolute;
+  margin-left: 20px;
+  animation: correr 1s steps(8) infinite;
+  top: 280px;
+}
+@keyframes correr {
+  0%{background-position: 0px;}
+  100%{background-position: -864px;}
+}
+
+.fondo{
+  height: 428px;
+  width: 760px;
+  background-image: url(img/fondo.jpg);
+  position: relative;
+  animation: fondo 12s linear infinite;
+  background-size: cover;
+  margin: 2%;
+}
+@keyframes fondo {
+  0%{background-position: 0px;}
+  100%{background-position: -760px;}
+}
+
+.enemigo{
+  height: 120px;
+  width: 97px;
+  background-image: url(img/obstaculo.png);
+  animation: obstaculo 1s steps(4) infinite;
+  position: absolute;
+  left: 760px;
+}
+@keyframes obstaculo {
+  0%{background-position: 0px;}
+  100%{background-position: -388px;}
+}
+.explosion{
+  width: 256px;
+  height: 256px;
+  transform: translate(-80px, -50px);
+  background-image: url('img/explosion.png');
+  animation: explosion 2s steps(52);
+}
+@keyframes explosion {
+  0%{background-position: 0px;}
+  100% {background-position: -14352px}
+}
+.container1{
+  width: 110px;
+  height: 438px;
+  position: absolute;
+  left: 785px;
+  top: 0px;
+  z-index: 1;
+  background-color: inherit;
+}
+.pagJuego{
+  background: rgb(61, 53, 53) none repeat scroll 0% 0%;
+  position: absolute;
+  width: 1260px;
+  height: 480px;
+  top: 13.5px;
+  left: 31.5px;
+  border: 1px solid rgb(78, 57, 57);
+  border-radius: 20px;
+  z-index: -1;
+}
+.puntos{
+  width: 240px;
+  height: 100px;
+  left: 916px;
+  top: 52px;
+  position: absolute;
+  font-size: small;
+}
+.btn, .reiniciar{
+  left: 920px;
+  top: 170px;
+  width: 210px;
+  height: 50px;
+  font-size: 30px;
+  position: absolute;
+  background-color: #3d337b;
+  transition: background-color 0.5s, color 0.5s;
+}
+.reiniciar{
+display: none;
+}
+.puntuacion{
+  width: 120px;
+  height: 90px;
+  left: 140px;
+  top: -13px;
+  position: absolute;
+  font-size: 30px;
+}
+.controles{
+  left: 930px;
+  text-align: left;
+  top: 280px;
+  position: absolute;
+  z-index: 1
+}
+.imgControl{
+  width: 210px;
+  height: 36px;
+  border-radius: 10px;
+}
