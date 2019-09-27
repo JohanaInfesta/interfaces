@@ -1,13 +1,14 @@
 .personaje{
-  height: 127px;
-  width: 108px;
+  height: 120px;
+  width: 106px;
   background-image:url(img/personaje.png);
   background-repeat: no-repeat;
   bottom: 10px;
   position: absolute;
   margin-left: 20px;
   animation: correr 1s steps(8) infinite;
-  top: 280px;
+  top: 290px;
+  z-index: 1;
 }
 @keyframes correr {
   0%{background-position: 0px;}
@@ -35,7 +36,11 @@
   animation: obstaculo 1s steps(4) infinite;
   position: absolute;
   left: 760px;
+  position: absolute;
+  z-index: 1;
+  top: 290px;
 }
+
 @keyframes obstaculo {
   0%{background-position: 0px;}
   100%{background-position: -388px;}
@@ -45,7 +50,7 @@
   height: 256px;
   transform: translate(-80px, -50px);
   background-image: url('img/explosion.png');
-  animation: explosion 2s steps(52);
+  animation: explosion 2s steps(52)infinite;
 }
 @keyframes explosion {
   0%{background-position: 0px;}
@@ -57,7 +62,7 @@
   position: absolute;
   left: 785px;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
   background-color: inherit;
 }
 .pagJuego{
@@ -69,7 +74,7 @@
   left: 31.5px;
   border: 1px solid rgb(78, 57, 57);
   border-radius: 20px;
-  z-index: -1;
+  z-index: 0;
 }
 .puntos{
   width: 240px;
@@ -90,13 +95,13 @@
   transition: background-color 0.5s, color 0.5s;
 }
 .reiniciar{
-display: none;
+  display: none;
 }
 .puntuacion{
   width: 120px;
   height: 90px;
-  left: 140px;
-  top: -13px;
+  left: 160px;
+  top: 14px;
   position: absolute;
   font-size: 30px;
 }
