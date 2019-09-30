@@ -1,7 +1,7 @@
 .personaje{
   height: 120px;
   width: 106px;
-  background-image:url(img/personaje.png);
+  background-image:url("img/personaje.png");
   background-repeat: no-repeat;
   bottom: 10px;
   position: absolute;
@@ -18,7 +18,7 @@
 .fondo{
   height: 428px;
   width: 760px;
-  background-image: url(img/fondo.jpg);
+  background-image: url("img/fondo.jpg");
   position: relative;
   animation: fondo 12s linear infinite;
   background-size: cover;
@@ -32,7 +32,7 @@
 .enemigo{
   height: 120px;
   width: 97px;
-  background-image: url(img/obstaculo.png);
+  background-image: url("img/obstaculo.png");
   animation: obstaculo 1s steps(4) infinite;
   position: absolute;
   left: 760px;
@@ -84,7 +84,7 @@
   position: absolute;
   font-size: small;
 }
-.btn, .reiniciar{
+.btn{
   left: 920px;
   top: 170px;
   width: 210px;
@@ -94,9 +94,7 @@
   background-color: #3d337b;
   transition: background-color 0.5s, color 0.5s;
 }
-.reiniciar{
-  display: none;
-}
+
 .puntuacion{
   width: 120px;
   height: 90px;
@@ -116,4 +114,20 @@
   width: 210px;
   height: 36px;
   border-radius: 10px;
+}
+.loser, .win{
+width: 500px;
+height: 270px;
+position: absolute;
+margin: 5%;
+background-repeat: no-repeat;
+left: 11%;
+}
+.loser{
+background-image: url("img/loser.png");
+display: none;
+}
+.win{
+background-image: url("img/win.png");
+display: none;
 }

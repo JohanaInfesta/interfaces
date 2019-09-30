@@ -3,19 +3,17 @@ let pj = {y : 290, vy : 0, gravedad :2 , salto : 150, vymax : 9, saltar : false}
 let suelo = 290;
 
 let btnJugar = document.getElementById("jugar");
-// let btnReset = document.getElementById("reiniciar");
-
 btnJugar.addEventListener("click", jugar);
 
 function jugar(){//empezar juego
-  // btnJugar.style.display = "none";
-  // btnReset.style.display = "initial";
+
   document.onkeydown = function(){saltarAvatar()};
   document.onkeyup = function(){bajarAvatar()};
   setInterval(function(){
     requestAnimationFrame(enemigos);
   }, Math.random()*5000+1);
-  score();
+  // score();
+setInterval('score()', 500);
 }
 
 
@@ -36,9 +34,7 @@ function gravedad(){
       avatar.style.top = pj.y + "px";
     }else{
       pj.vy -= pj.gravedad;
-      //pj.y -= pj.vy
-      avatar.style.top = (pj.y - pj.vy) + "px";
-      colision();
+      avatar.style.top = (pj.y -= pj.vy) + "px";
     }
   }
 }
@@ -52,7 +48,7 @@ function bajarAvatar(){
 
 let enemigo = document.getElementById("enemigo");
 let pjEnemigo = {x : 760, y : 120 , suelo};
-let nivel = {velocidad : 2, puntuacion : 0, muerto : false};
+let nivel = {velocidad : 3, puntuacion : 0, muerto : false};
 
 function enemigos(){// traer enemigo
   if(pjEnemigo.x < -50){
@@ -64,24 +60,23 @@ function enemigos(){// traer enemigo
   }
   colision();
 }
-
-function score(){//sumar puntos una vez arranca el juego
-  var n = 0;
+let puntuacion = {inicio : 0, fin : 100};
+function score(){
   var pts = document.getElementById("puntos");
-  if(nivel.muerto == false){
-    n++;
-  pts.innerHTML = n;
-  }
 
-  if(n == 100 && nivel.muerto == false){
-    //ganaste
-    console.log("win")
-    n = 0;
-  }else{
-    //loser
-    console.log("muerto")
-    n = 0;
-  }
+    if(nivel.muerto == false && puntuacion.inicio >= puntuacion.fin){
+      console.log("win")
+      puntuacion.inicio = 0;
+      //ganaste
+    }else if(nivel.muerto == true){
+      console.log("muerto");
+      document.getElementById("loser").style.display = "initial";
+    }else{
+      puntuacion.inicio ++;
+      pts.innerHTML = puntuacion.inicio;
+    }
+  // },100);
+return puntuacion.inicio;
 }
 
 function colision(){
