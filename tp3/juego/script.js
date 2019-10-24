@@ -13,7 +13,7 @@ function jugar(){//empezar juego
   setInterval('score()', 500);
 }
 
-let pj = {posicion : avatar.offsetHeight, y : 290, vy : 0, gravedad :2 , salto : 150, vymax : 9, saltar : false}
+let pj = { y : 290, vy : 0, gravedad :2 , salto : 150, vymax : 9, saltar : false}
 
 function saltarAvatar(){
   if(event.keyCode == 32){
@@ -30,15 +30,17 @@ function gravedad(){
       pj.y = suelo;
       avatar.style.top = pj.y + "px";
     }else{
-      pj.vy += pj.gravedad;
-      avatar.style.top = (pj.y -= pj.vy) + "px";
+      saltar();
       setTimeout(function(){
         bajarAvatar()
-      }, 600);
+      }, 800);
     }
   }
 }
-
+function saltar(){
+    pj.vy += pj.gravedad;
+    avatar.style.top = (pj.y -= pj.vy) + "px";
+}
 function bajarAvatar(){
   if(pj.saltar == true){
     pj.saltar = false;
