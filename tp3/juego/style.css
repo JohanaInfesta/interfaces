@@ -6,7 +6,7 @@
   bottom: 10px;
   position: absolute;
   margin-left: 20px;
-  animation: correr 1s steps(8) infinite;
+  animation: correr 1s steps(8) reverse infinite;
   top: 290px;
   z-index: 1;
 }
