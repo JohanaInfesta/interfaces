@@ -1,0 +1,12 @@
+img{
+    display: block;
+    margin: auto; 
+}
+.cuadro{
+    position: absolute;
+    width: 496px;
+    height: 287px;
+    left: 157px;
+    top: 139px;
+    background: rgba(131, 120, 120, 0.4);
+}
