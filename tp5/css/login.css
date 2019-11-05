@@ -203,16 +203,18 @@ form h1 {
     text-shadow: black 2px 2px;
 }
 
-form label {
+#lab {
     font-family: Roboto;
     font-size: 15px;
     -webkit-text-fill-color: white;
+    text-shadow: black 2px 2px;
 }
 
 form a {
     font-family: Roboto;
     font-size: 15px;
     -webkit-text-fill-color: white;
+    text-shadow: black 2px 2px;
 }
 
 .btn-primary {
