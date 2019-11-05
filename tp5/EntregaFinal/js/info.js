@@ -1,3 +1,11 @@
+window.onload = function () {
+    if (window.screen.width < 900) {
+        iframe.style = "width: 0 ; height: 0;";
+    } else if (window.screen.width > 900) {
+        iframe.style = "width: 60% ; height: 60%;";
+    }
+}
+
 let botonplay = document.getElementById("play");
 botonplay.addEventListener("click", function () {
     location.href = "ver.html";
@@ -17,6 +25,8 @@ window.addEventListener("resize", function () {
         iframe.style = "width: 60% ; height: 60%;";
     }
 })
+
+
 
 
 let visible = document.getElementsByClassName("front");
