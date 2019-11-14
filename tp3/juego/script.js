@@ -18,39 +18,27 @@ let pj = { y : 290, vy : 0, gravedad :2 , salto : 150, vymax : 9, saltar : false
 function saltarAvatar(){
   if(event.keyCode == 32){
     pj.saltar = true;
-    pj.vy = pj.salto;
-    gravedad();
+    saltar();
   }
 }
-function gravedad(){
-  if(pj.saltar == true && nivel.muerto == false){
-    if( pj.y < suelo){
-      pj.saltar = false;
-      pj.vy = 0;
-      pj.y = suelo;
-      avatar.style.top = pj.y + "px";
-    }else{
-      saltar();
-      setTimeout(function(){
-        bajarAvatar()
-      }, 800);
-    }
-  }
-}
+
 function saltar(){
-    pj.vy += pj.gravedad;
-    avatar.style.top = (pj.y -= pj.vy) + "px";
+    avatar.style.animation = "saltar 1s 1"
+    setTimeout(function(){
+      bajarAvatar()
+    }, 800); 
 }
+
 function bajarAvatar(){
   if(pj.saltar == true){
     pj.saltar = false;
-    avatar.style.top = suelo + "px";
+    avatar.style.animation = "correr 1s steps(8) reverse infinite";
   }
 }
 
 let enemigo = document.getElementById("enemigo");
 let pjEnemigo = {x : 760, y : 120 , suelo};
-let nivel = {velocidad : 3, puntuacion : 0, muerto : false};
+let nivel = {velocidad : 5, puntuacion : 0, muerto : false};
 
 function enemigos(){// traer enemigo
   if(pjEnemigo.x < -50){
@@ -62,24 +50,22 @@ function enemigos(){// traer enemigo
   }
   colision();
 }
+
 let puntuacion = {inicio : 0, fin : 100};
+
 function score(){
   var pts = document.getElementById("puntos");
-
   if(nivel.muerto == false && puntuacion.inicio >= puntuacion.fin){
     puntuacion.inicio = 0;
     document.getElementById("win").style.display = "initial";
     //ganaste
-
   }else if(nivel.muerto == true){
     document.getElementById("loser").style.display = "initial";
     //perdiste
   }else{
     puntuacion.inicio ++;
     pts.innerHTML = puntuacion.inicio;
-  }
-  // },100);
-  return puntuacion.inicio;
+  }return puntuacion.inicio;
 }
 
 function colision(){
