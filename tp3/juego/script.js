@@ -9,7 +9,7 @@ function jugar(){//empezar juego
   document.onkeydown = function(){saltarAvatar()};
   setInterval(function(){
     requestAnimationFrame(enemigos);
-  }, Math.random()*6000+1);
+  }, Math.random()*5000);
   setInterval('score()', 500);
 }
 
@@ -26,7 +26,7 @@ function saltar(){
     avatar.style.animation = "saltar 1s 1"
     setTimeout(function(){
       bajarAvatar()
-    }, 800); 
+    }, 900); 
 }
 
 function bajarAvatar(){
@@ -68,16 +68,21 @@ function score(){
   }return puntuacion.inicio;
 }
 
-function colision(){
-  if((pjEnemigo.x >= 70 ) && (pjEnemigo.x <= 90)){
-    if(pj.saltar == true){
-      nivel.muerto = false;
-    }else{
-      nivel.muerto = true;
-      nivel.velocidad =  0;
-      pjEnemigo.x = 60;
-      avatar.classList.add("explosion");
-      enemigo.style.display = "none";
-    }
+function colision() {
+  let pj = avatar.getBoundingClientRect();
+  let enemy = enemigo.getBoundingClientRect();
+  if (!nivel.muerto) {
+      if ((pj.left) < enemy.left + enemy.width && pj.left + pj.width > enemy.left &&
+          (pj.top) < enemy.top + enemy.height && pj.top + pj.height > enemy.top) {
+          derrota();
+      }
   }
+}
+
+function derrota(){
+  nivel.muerto = true;
+  nivel.velocidad =  0;
+  avatar.classList.remove("personaje");
+  document.getElementById("explosion").style.display = "initial";
+  enemigo.style.display = "none";
 }

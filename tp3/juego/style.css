@@ -5,6 +5,7 @@
   bottom: 0px;
   position: absolute;
   left: 20px;
+  margin-bottom: 25px;
   animation: correr 1s steps(8) reverse infinite;
 }
 @keyframes correr {
@@ -13,44 +14,66 @@
 }
 @keyframes saltar{
   0%{ bottom: 0px}
-  50%{bottom: 150px}
+  50%{bottom: 180px}
   100%{bottom: 0px}
 }
 .fondo{
   height: 428px;
   width: 760px;
-  background-image: url("img/fondo.jpg");
   position: relative;
-  animation: fondo 12s linear infinite;
   background-size: cover;
+}
+#fondo1{
+  background-image: url("img/cielo.jpg");
+  animation: fondo 480s linear infinite;
+  z-index: 1;
   margin: 2%;
+}
+#fondo2{
+  background-image: url("img/calle.png");
+  animation: fondo 20s linear infinite;
+  z-index: 2;
+}
+#fondo3{
+  background-image: url("img/cesped.png");
+  animation: fondo 20s linear infinite;
+  z-index: 3; 
+}
+#fondo4{
+  background-image: url("img/arbusto.png");
+  animation: fondo 20s linear infinite;
+  z-index: 4;
 }
 @keyframes fondo {
   0%{background-position: 0px;}
-  100%{background-position: -760px;}
+  100%{background-position: -989px;}
 }
 
 .enemigo{
-  height: 120px;
-  width: 97px;
-  background-image: url("img/obstaculo.png");
-  animation: obstaculo 1s steps(4) infinite;
+  height: 83px;
+  width: 56px;
+  background-image: url("img/enemigo.png");
+  animation: obstaculo 1s steps(9) infinite;
   position: absolute;
   left: 760px;
   position: absolute;
   z-index: 1;
-  top: 290px;
+  top: 323px;
 }
 
 @keyframes obstaculo {
   0%{background-position: 0px;}
-  100%{background-position: -388px;}
+  100%{background-position: -504px;}
 }
 .explosion{
   width: 256px;
   height: 256px;
+  position: absolute;
+  bottom: -70px;
+  left: 20px;
   transform: translate(-80px, -50px);
   background-image: url('img/explosion.png');
+  display: none;
   animation: explosion 2s steps(52)infinite;
 }
 @keyframes explosion {
@@ -59,7 +82,7 @@
 }
 .container1{
   width: 110px;
-  height: 438px;
+  height: 453px;
   position: absolute;
   left: 785px;
   top: 0px;
